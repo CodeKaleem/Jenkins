@@ -126,7 +126,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-100 text-slate-900">
+    <main className="min-h-screen bg-indigo-50 text-slate-900">
       {/* Header */}
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
 
         {/* Products */}
-        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+        <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
           <div className="border-b border-slate-200 px-6 py-5">
             <h2 className="text-lg font-semibold">Products</h2>
             <p className="mt-1 text-sm text-slate-500">
