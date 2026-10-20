@@ -126,9 +126,9 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-indigo-50 text-slate-900">
+    <main className="min-h-screen bg-linear-to-br from-indigo-50 via-white to-sky-100 text-slate-900">
       {/* Header */}
-      <header className="border-b border-slate-200 bg-white">
+      <header className="border-t-4 border-t-indigo-500 border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <div>
             <h1 className="text-2xl font-bold tracking-tight">
@@ -141,7 +141,7 @@ export default function Home() {
 
           <button
             onClick={openCreateForm}
-            className="rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-slate-700"
+            className="rounded-lg bg-indigo-600 shadow-md px-4 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-500"
           >
             + Add Product
           </button>
@@ -152,12 +152,12 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-8">
         {/* Stats */}
         <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-slate-200 border-l-4 border-l-indigo-500 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <p className="text-sm text-slate-500">Total Products</p>
             <p className="mt-2 text-3xl font-bold">{products.length}</p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-slate-200 border-l-4 border-l-emerald-500 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <p className="text-sm text-slate-500">Inventory Value</p>
             <p className="mt-2 text-3xl font-bold">
               $
@@ -167,7 +167,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-slate-200 border-l-4 border-l-amber-500 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
             <p className="text-sm text-slate-500">System Status</p>
             <p className="mt-2 flex items-center gap-2 text-lg font-semibold">
               <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
@@ -196,7 +196,7 @@ export default function Home() {
 
               <button
                 onClick={openCreateForm}
-                className="mt-5 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white"
+                className="mt-5 rounded-lg bg-indigo-600 shadow-md px-4 py-2.5 text-sm font-medium text-white"
               >
                 + Add Product
               </button>
@@ -204,7 +204,7 @@ export default function Home() {
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
-                <thead className="bg-slate-50 text-xs uppercase text-slate-500">
+                <thead className="bg-indigo-600 text-xs uppercase text-white">
                   <tr>
                     <th className="px-6 py-4 font-semibold">ID</th>
                     <th className="px-6 py-4 font-semibold">Product</th>
@@ -220,7 +220,7 @@ export default function Home() {
                   {products.map((product) => (
                     <tr
                       key={product.id}
-                      className="transition hover:bg-slate-50"
+                      className="transition hover:bg-indigo-50"
                     >
                       <td className="px-6 py-4 font-medium text-slate-500">
                         #{product.id}
@@ -350,7 +350,7 @@ export default function Home() {
 
                 <button
                   type="submit"
-                  className="rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-medium text-white hover:bg-slate-700"
+                  className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-indigo-500"
                 >
                   {editingProduct ? "Update Product" : "Create Product"}
                 </button>
