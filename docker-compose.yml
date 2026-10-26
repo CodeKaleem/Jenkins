@@ -10,11 +10,16 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d product_db"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
     networks:
       - app-network
 
   backend:
-    build: ./backend
+    image: kaleem830/product-backend:${TAG:-latest}
     container_name: node_backend
     environment:
       PORT: 5000
@@ -22,15 +27,14 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - app-network
 
   frontend:
-    build: ./frontend
+    image: kaleem830/product-frontend:${TAG:-latest}
     container_name: nextjs_frontend
-    environment:
-      - NEXT_PUBLIC_API_URL=http://backend:5000/api
     ports:
       - "3000:3000"
     depends_on:
